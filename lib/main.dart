@@ -103,7 +103,10 @@ class _PeriodicTableState extends State<PeriodicTable> {
           width: itemSize.width * numberOfColumns,
           child: GridView.count(
             crossAxisCount: numberOfColumns,
+            padding: EdgeInsets.all(1),
             childAspectRatio: 1,
+            crossAxisSpacing: 1,
+            mainAxisSpacing: 1,
             shrinkWrap: true,
             children: List<Widget>.generate(numberOfRows * numberOfColumns, (index) {
 //        print('list item index: $index');
@@ -125,10 +128,8 @@ class _PeriodicTableState extends State<PeriodicTable> {
 //                width: itemSize.width,
 //                height: itemSize.height,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    image: element['spectral_img'] != null
-                        ? DecorationImage(image: NetworkImage(element['spectral_img']))
-                        : null),
+                  color: Colors.blue,
+                ),
                 child: Stack(
                   children: <Widget>[
                     Positioned(
